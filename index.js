@@ -1,7 +1,16 @@
-// read mod global config
-// app root path: node_modules/mod/
-var sAppRoot = __dirname+'/../../';
-// if read error process exit(1)
-var oConfig = require(sAppRoot+'/Modfile.js');
+// create instance method
+var qmMload = require('./lib/main.js');
 
-module.exports = require('./lib/main.js')(oConfig, sAppRoot);
+try {
+	// read mod global config
+	// app root path: node_modules/mod/
+	var sAppRoot = __dirname+'/../../';
+	var oConfig = require(sAppRoot+'/Modfile.js');
+	module.exports = qmMload(oConfig, sAppRoot);
+	module.exports.inited = true;
+}
+catch(e)
+{
+	module.exports = qmMload;
+	qmMload.inited = false;
+}
