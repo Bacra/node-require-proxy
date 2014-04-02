@@ -1,0 +1,25 @@
+{
+	"name": "mload",
+	"version": "0.0.1",
+	"description": "require modules through config proxy",
+	"main": "index.js",
+	"scripts": {
+		"test": "node test/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/Bacra/node-require-proxy.git"
+	},
+	"keywords": [
+		"node",
+		"require",
+		"proxy",
+		"modules"
+	],
+	"author": "Bacra Woo <Bacra.Woo@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Bacra/node-require-proxy/issues"
+	},
+	"homepage": "https://github.com/Bacra/node-require-proxy"
+}
