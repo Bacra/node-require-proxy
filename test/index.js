@@ -8,7 +8,7 @@ var oConfig = {
 	}
 };
 
-var mload = require('../lib/main.js')(oConfig, __dirname+'/');
+var mload = require('../index.js')(oConfig, __dirname+'/');
 
 assert.doesNotThrow(function()
 {
