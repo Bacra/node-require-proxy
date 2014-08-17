@@ -2,10 +2,8 @@ var assert = require('assert');
 
 var oConfig = {
 	global: 'mload',
-	alias: {
-		'simple': './mod/simple.js',
-		'nofile': './mod/nofile.js'
-	}
+	simple: './mod/simple.js',
+	nofile: './mod/nofile.js'
 };
 
 var mload = require('../index.js')(oConfig, __dirname+'/');

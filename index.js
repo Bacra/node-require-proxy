@@ -3,7 +3,7 @@ var createMLoad = require('./lib/main.js');
 
 try {
 	// read mod global config
-	// app root path: node_modules/mod/
+	// app root path: node_modules/mload/
 	var sAppRoot = __dirname+'/../../';
 	var oConfig = require(sAppRoot+'/Modfile.js');
 	module.exports = createMLoad(oConfig, sAppRoot);
