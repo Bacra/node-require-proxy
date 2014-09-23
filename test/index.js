@@ -1,12 +1,13 @@
 var assert = require('assert');
-
-var oConfig = {
-	global: 'mload',
+var path = require('path');
+var mload = require('../index.js');
+var oAlias = {
 	simple: './mod/simple.js',
 	nofile: './mod/nofile.js'
 };
 
-var mload = require('../index.js')(oConfig, __dirname+'/');
+mload(oAlias);
+
 
 assert.doesNotThrow(function()
 {
@@ -31,5 +32,7 @@ assert.throws(function()
 }, 'load nofile alias');
 
 
-// test global
-require('./global.js');
+assert.strictEqual(mload.info().filename, path.normalize(__filename), 'info self');
+assert.strictEqual(mload.info('nofile').filename, path.normalize(__dirname+'/'+oAlias.nofile), 'info alias');
+
+require('./mod/child_dir.js');
