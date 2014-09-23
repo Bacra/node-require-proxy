@@ -9,6 +9,7 @@ var oAlias = {
 mload(oAlias);
 
 
+
 assert.doesNotThrow(function()
 {
 	var test = mload('simple');
@@ -34,5 +35,8 @@ assert.throws(function()
 
 assert.strictEqual(mload.info().filename, path.normalize(__filename), 'info self');
 assert.strictEqual(mload.info('nofile').filename, path.normalize(__dirname+'/'+oAlias.nofile), 'info alias');
+
+mload.addAliasByFile('./mod/alias.js');
+assert.strictEqual(mload('simple2').simple, true, 'addAliasByFile');
 
 require('./mod/child_dir.js');
