@@ -1,0 +1,1 @@
+module.exports = {custom_package: 1};
