@@ -7,6 +7,8 @@ require modules through config proxy
 ## Features
 
 * custom alias for require package
+* integrate native `require` method
+* independently set alias for each module package
 * easy `reload` package
 * easy add alias by file width using `addAliasByFile`
 
@@ -15,6 +17,7 @@ require modules through config proxy
 
 * `require("mload")` is no cache mode in nodejs
 * alias is override
+* use nodejs private methods: `_resolveLookupPaths` `_findPath` `_resolveFilename` of `module` package
 
 
 ## Installation
@@ -43,6 +46,9 @@ Method: `load` `clear` `addAlias` `info` `addAliasByFile`
 		require('mload')(i);
 	}
 	*/
+
+	// use by native require
+	require('v1');  // out: exports of `./v1` file
 
 
 ### Add alias by file
