@@ -1,25 +1,30 @@
 {
-	"name": "mload",
-	"version": "1.0.1",
-	"description": "require modules through config proxy",
-	"main": "index.js",
-	"scripts": {
-		"test": "node test/index.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/Bacra/node-require-proxy.git"
-	},
-	"keywords": [
-		"node",
-		"require",
-		"proxy",
-		"modules"
-	],
-	"author": "Bacra Woo <Bacra.Woo@gmail.com>",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/Bacra/node-require-proxy/issues"
-	},
-	"homepage": "https://github.com/Bacra/node-require-proxy"
+  "name": "mload",
+  "version": "1.0.1",
+  "description": "require modules through config proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Bacra/node-require-proxy.git"
+  },
+  "keywords": [
+    "node",
+    "require",
+    "proxy",
+    "modules"
+  ],
+  "author": "Bacra Woo <Bacra.Woo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bacra/node-require-proxy/issues"
+  },
+  "homepage": "https://github.com/Bacra/node-require-proxy",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-nodeunit": "^0.4.1"
+  }
 }

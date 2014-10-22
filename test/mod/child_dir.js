@@ -1,22 +1,29 @@
-var assert = require('assert');
-var mload = require('../../index.js');
-
-mload(
+module.exports = function(test)
 {
-	simple_child: './simple_child.js'
-});
+	var mload = require('mload');
+
+	mload(
+	{
+		simple_child: './simple_child.js'
+	});
+
+	// not mload
+	test.ok(module.parent.filename.indexOf('test') != -1, 'child check parent module');
+
+	test.doesNotThrow(function()
+	{
+		var simple = mload('simple_child');
+		test.strictEqual(simple.simple, true, 'direct load simple_child value');
+	}, 'direct load simple_child');
 
 
-assert.doesNotThrow(function()
-{
-	var test = mload('simple_child');
-	assert.strictEqual(test.simple, true, 'direct load simple_child value');
-}, 'direct load simple_child');
+	var simple = mload.load('simple_child');
+	test.strictEqual(simple.simple, true, 'load simple_child value');
 
-var test = mload.load('simple_child');
-assert.strictEqual(test.simple, true, 'load simple_child value');
+	var simple2 = mload.reload('simple_child');
+	test.notStrictEqual(simple, simple2, 'reload simple_child');
 
-var test2 = mload.reload('simple_child');
-assert.notStrictEqual(test, test2, 'reload simple_child');
+	test.strictEqual(mload.load('simple').simple, true, 'load simple in chid');
 
-assert.strictEqual(mload.load('simple').simple, true, 'load simple in chid');
+	test.done();
+}
