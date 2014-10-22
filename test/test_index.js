@@ -60,7 +60,7 @@ exports.addAliasByFile = function(test)
 
 exports.child_dir = require('./mod/child_dir.js');
 
-exports.other_package = function(test)
+exports.custom_package = function(test)
 {
 	var _oCustom = mload('custom');
 	test.strictEqual(_oCustom.value, 1, 'custom node_module package');
