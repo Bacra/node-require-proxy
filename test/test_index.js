@@ -1,3 +1,5 @@
+require('debug').enable('mload:*');
+
 var path = require('path');
 var mload = require('mload');
 var oAlias = {
