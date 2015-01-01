@@ -1,17 +1,14 @@
-module.exports = function(test)
-{
+module.exports = function(test) {
 	var mload = require('mload');
 
-	mload(
-	{
+	mload({
 		simple_child: './simple_child.js'
 	});
 
 	// not mload
 	test.ok(module.parent.filename.indexOf('test') != -1, 'child check parent module');
 
-	test.doesNotThrow(function()
-	{
+	test.doesNotThrow(function() {
 		var simple = mload('simple_child');
 		test.strictEqual(simple.simple, true, 'direct load simple_child value');
 	}, 'direct load simple_child');
