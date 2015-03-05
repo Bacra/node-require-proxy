@@ -8,7 +8,7 @@ require modules through config proxy
 
 * custom alias for require package
 * integrate native `require` method
-* independently set alias for each module package
+* ~~independently set alias for each module package~~
 * easy `reload` package
 * easy add alias by file width using `addAliasByFile`
 

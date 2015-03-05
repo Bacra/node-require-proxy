@@ -1,4 +1,4 @@
-require('debug').enable('mload:*');
+// require('debug').enable('mload:*');
 
 var path = require('path');
 var mload = require('mload');
@@ -39,8 +39,12 @@ exports.testBase = {
 		test.done();
 	},
 	mload_info: function(test) {
-		test.strictEqual(mload.info().filename, path.normalize(__filename), 'info self');
-		test.strictEqual(mload.info('nofile').filename, undefined, 'info alias');
+		test.strictEqual(mload.info().mload, path.normalize(__filename), 'info self');
+		// blank
+		test.strictEqual(mload.info('nofile').path, undefined, 'info path alias');
+
+		test.strictEqual(mload.info('simple').from, path.normalize(__filename), 'info from alias');
+		test.strictEqual(mload.info('simple').path, require.resolve(oAlias.simple), 'info rel_path alias');
 
 		test.done();
 	}
@@ -61,10 +65,10 @@ exports.custom_package = function(test) {
 
 	_oCustom.test(test);
 
-	test.strictEqual(mload('simple').simple, true, 'load simple value after node package');
+	test.notStrictEqual(mload('simple').simple, true, 'load simple value after node package');
+	test.strictEqual(mload.info('simple').from, require.resolve('custom'), 'simple change from');
 
 	test.done();
 };
-
-
-exports.no_mload = require('no_mload');
+/*
+exports.no_mload = require('no_mload');*/
