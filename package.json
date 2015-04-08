@@ -1,6 +1,6 @@
 {
   "name": "mload",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "require modules through config proxy",
   "main": "index.js",
   "scripts": {
@@ -32,6 +32,7 @@
     "grunt-contrib-nodeunit": "^0.4.1"
   },
   "dependencies": {
-    "debug": "^2.1.0"
+    "debug": "^2.1.0",
+    "smtpl": "^0.2.2"
   }
 }
