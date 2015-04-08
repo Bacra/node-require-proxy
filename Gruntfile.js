@@ -31,12 +31,16 @@ module.exports = function (grunt)
 		},
 		nodeunit: {
 			all: ['test/test_*.js']
+		},
+		clean: {
+			node_modules: ['test/node_modules']
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
-	grunt.registerTask('default', ['copy', 'nodeunit']);
+	grunt.registerTask('default', ['clean', 'copy', 'nodeunit']);
 	grunt.registerTask('test', ['default']);
 };
