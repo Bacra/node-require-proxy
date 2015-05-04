@@ -41,7 +41,7 @@ exports.testBase = {
 	mload_info: function(test) {
 		test.strictEqual(mload.info().mload, path.normalize(__filename), 'info self');
 		// blank
-		test.strictEqual(mload.info('nofile').path, undefined, 'info path alias');
+		test.strictEqual(mload.info('nofile'), undefined, 'info path alias');
 
 		test.strictEqual(mload.info('simple').from, path.normalize(__filename), 'info from alias');
 		test.strictEqual(mload.info('simple').path, require.resolve(oAlias.simple), 'info rel_path alias');
