@@ -1,6 +1,6 @@
 {
   "name": "mload",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "require modules through config proxy",
   "main": "index.js",
   "scripts": {
